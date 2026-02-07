@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BNB Farm</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f7f2dc;
+        color: #222;
+    }
+
+    header {
+        background: #fff;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+    }
+
+    header h1 {
+        font-size: 16px;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .badge {
+        color: #1e90ff;
+        font-size: 14px;
+        margin-left: 6px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .balance {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .wheel {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin: 0 auto 16px;
+        background: radial-gradient(circle, #ffd24d, #c99700);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .bnb-amount {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .hashrate {
+        font-size: 14px;
+        color: #666;
+        margin-top: 4px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .btn {
+        flex: 1;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .btn.reward {
+        background: #fff;
+        border: 2px solid #f5c400;
+        color: #f5c400;
+    }
+
+    .btn.booster {
+        background: #f5c400;
+        color: #fff;
+    }
+
+    .section-title {
+        font-weight: bold;
+        margin: 20px 0 10px;
+    }
+
+    .task {
+        background: #fff;
+        padding: 12px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .task span {
+        font-size: 14px;
+    }
+
+    .task .go {
+        background: #f5c400;
+        border: none;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    footer div {
+        font-size: 13px;
+        color: #555;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <span>Kapat</span>
+    <h1>#BNB Farm <span class="badge">✔</span></h1>
+    <span>⚙</span>
+</header>
+
+<div class="container">
+
+    <div class="balance">
+        <div class="wheel">BNB</div>
+        <div class="bnb-amount" id="bnb">0.00000167 BNB</div>
+        <div class="hashrate">Hashrate: 3 GH/s ⚡</div>
+
+        <div class="buttons">
+            <button class="btn reward" onclick="reward()">Ödül al</button>
+            <button class="btn booster" onclick="booster()">Booster</button>
+        </div>
+    </div>
+
+    <div class="section-title">Günlük Görevler</div>
+
+    <div class="task">
+        <span>Binance News +200 $FMC</span>
+        <button class="go">GO</button>
+    </div>
+
+    <div class="task">
+        <span>OKX News +200 $FMC</span>
+        <button class="go">GO</button>
+    </div>
+
+    <div class="task">
+        <span>Facebook +200 $FMC</span>
+        <button class="go">GO</button>
+    </div>
+
+    <div class="task">
+        <span>Invite 20 Friends +6000 $FMC</span>
+        <button class="go">GO</button>
+    </div>
+
+</div>
+
+<footer>
+    <div>Anasayfa</div>
+    <div>Arkadaşlar</div>
+    <div>Cüzdan</div>
+</footer>
+
+<script>
+    let bnb = 0.00000167;
+
+    function reward() {
+        bnb += 0.00000001;
+        document.getElementById("bnb").innerText = bnb.toFixed(8) + " BNB";
+        alert("Ödül alındı!");
+    }
+
+    function booster() {
+        alert("Booster aktif (demo)");
+    }
+</script>
+
+</body>
+</html>
